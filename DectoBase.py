@@ -39,13 +39,4 @@ def basetobase(number, oldBase, newBase): #does not yet work
         print("-", end="")
         basetobase(-number, oldBase, newBase)
     else:
-        decimalnum = 0;
-        power = math.floor(math.log(number, newBase))
-        for x in range(0, power+1):
-            product = int(number/newBase**(power-x))
-            decimalnum+=product*oldBase**(power-x)
-            if number >= newBase**(power-x):
-                number -= product*newBase**(power-x)
-        return decimalnum
-        
-print(basetobase(120, 6, 7))
+        return dectobase(basetodec(number, oldBase), newBase)
